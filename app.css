@@ -1,0 +1,15 @@
+/* app css stylesheet */
+
+li {
+  list-style-type: none;
+  margin-left: 20px;
+}
+
+ul {
+	margin-left: 0px;
+}
+
+.output {
+	height: 200px;
+  overflow-y: scroll;
+}
