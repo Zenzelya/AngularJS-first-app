@@ -1,10 +1,12 @@
+(function () {
+'use strict';
+
 angular
     .module('parseToSentences', [])
     .factory('parseToSentences', parseToSentences);
 
 function parseToSentences() {
     
-    // var input_text = ' c';
     var input_text = '';
 
 
@@ -33,10 +35,7 @@ function parseToSentences() {
     }
 
     function toWords(text) {
-
-
-      let 
-          space = /\s{2,}/g,
+      let space = /\s{2,}/g,
           sentences = [];
 
       for (let i = 0; i < text.length; i++) {
@@ -58,3 +57,4 @@ function parseToSentences() {
     };
         
 }
+})();

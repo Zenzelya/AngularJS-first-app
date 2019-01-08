@@ -1,0 +1,26 @@
+{
+  "name": "angularjs-first-app",
+  "version": "1.0.0",
+  "description": "parse input text to XML and CVS format",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zenzelya/AngularJS-first-app.git"
+  },
+  "author": "Andrei Kelhankin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Zenzelya/AngularJS-first-app/issues"
+  },
+  "homepage": "https://github.com/Zenzelya/AngularJS-first-app#readme",
+  "devDependencies": {
+    "angular-mocks": "^1.7.5",
+    "jasmine-core": "^3.3.0",
+    "karma": "^3.1.4",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^2.0.1"
+  }
+}

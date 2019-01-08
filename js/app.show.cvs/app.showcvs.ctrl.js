@@ -1,3 +1,5 @@
+(function () {
+'use strict';
 angular
   .module('app.show.csv', [])
   .controller('ShowCsvCtrl', ShowCsvCtrl);
@@ -5,11 +7,11 @@ angular
 ShowCsvCtrl.$inject = ['parseToSentences'];
 
 function ShowCsvCtrl(parseToSentences) {
+  
   var vm = this;
   vm.text = parseToSentences.getInputText();
   vm.max_length = 0;
   vm.sentences;
-
 
   vm.getMaxSentenceSize = getMaxSentenceSize;
   vm.showCVS = showCVS;
@@ -26,15 +28,15 @@ function ShowCsvCtrl(parseToSentences) {
     }
   }
 
-  function getMaxSentenceSize() {
+  function getMaxSentenceSize(sentence = vm.sentences) {
     var max = 0;
-
-    for (let i = 0; i < vm.sentences.length; i++) {
-      if (max < vm.sentences[i].length) {
-        max = vm.sentences[i].length;
+    for (let i = 0; i < sentence.length; i++) {
+      if (max < sentence[i].length) {
+        max = sentence[i].length;
       }
     }
     return max;
   }
 
 }
+})();

@@ -1,3 +1,6 @@
+(function () {
+'use strict';
+
 angular
     .module('app.show.xml', [])
     .controller('ShowXmlCtrl', ShowXmlCtrl);
@@ -28,8 +31,7 @@ function ShowXmlCtrl(parseToSentences) {
 				alert('Please enter text');
 			}
 		}
-
-
-
-
  }
+
+})();
+ 
