@@ -7,8 +7,7 @@ angular
 
 function parseToSentences() {
     
-    var input_text = '';
-
+    let input_text = '';
 
     let parseToSentences = {
       getInputText,
@@ -40,17 +39,11 @@ function parseToSentences() {
 
       for (let i = 0; i < text.length; i++) {
         if (text[i].length > 0) {
-        sentences.push(text[i]
-                            .replace(space, " ")
-                            .trim()
-                            .split(' ')
-                            .sort(function(a, b){
-                              if(a.toLowerCase() < b.toLowerCase()) { return -1; }
-                              if(a.toLowerCase() > b.toLowerCase()) { return 1; }
-                              return 0;})
-                            );
+          sentences.push(text[i].replace(space, " ")
+                                .trim()
+                                .split(' ')
+                                .sort((a, b) => { a.toLowerCase() < b.toLowerCase() ? -1 : 1 }));
         }
-
       };
 
       return sentences;

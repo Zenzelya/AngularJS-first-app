@@ -2,7 +2,7 @@
 'use strict';
 
 describe('app.show.csv test', function() {
-  var ShowCsvCtrl, parseToSentences, $controller;
+  let ShowCsvCtrl, parseToSentences, $controller;
 
   beforeEach(module('app.show.csv'));
   beforeEach(module('parseToSentences'));

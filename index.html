@@ -15,50 +15,52 @@
       <div class="row mb-2">
         <article ng-controller="InputCtrl as input"  class="col-12 d-flex justify-content-center">
           <textarea name="text"  
-         						ng-model="input.text" 
-          					ng-change="input.onChange()" 
-          					class="output w-75 ">
+            ng-model="input.text" 
+            ng-change="input.onChange()" 
+            class="output w-75 ">
           </textarea>
         </article>
       </div>
       <div class="row d-flex  justify-content-center  mb-2">
         <article ng-controller="ShowXmlCtrl as showXml"
-          			 class="col-10 ">
-            <button type="button" ng-click="showXml.showXML()" class="btn btn-primary mb-2 w-25">Parse to XML</button>
-          
-            <div class='output border rounded bg-white p-1'>
-          	<span>  {{showXml.xmlHeader}}<br>
-          					{{showXml.xmltext}}<br></span>
+          class="col-10 ">
+          <button type="button" ng-click="showXml.showXML()" class="btn btn-primary mb-2 w-25">Parse to XML</button>
+          <div class='output border rounded bg-white p-1'>
+            <span>  {{showXml.xmlHeader}}<br>
+            {{showXml.xmltext}}<br></span>
             <ul ng-repeat="sentence in showXml.sentences track by $index" 
-            		class="mb-0">
-           		{{'<'+'sentence'+'>'}}
-            		<li ng-repeat="item in sentence track by $index">{{'<'+'word'+'>' + item + '<\/'+'word'+'>'}}</li>
-           		{{'<\/'+'sentence'+'>'}}
-          	</ul>
-          	<span>{{showXml.xmltextend}}</span>
+              class="mb-0">
+              {{'<'+'sentence'+'>'}}
+              <li ng-repeat="item in sentence track by $index">{{'<'+'word'+'>' + item + '<\/'+'word'+'>'}}</li>
+              {{'<\/'+'sentence'+'>'}}
+            </ul>
+            <span>{{showXml.xmltextend}}</span>
           </div>
-         </article>
-          </div>
-      <div class="row d-flex justify-content-center  ">
-        
-         <article ng-controller="ShowCsvCtrl as showCvs" 
-                  class="col-10">
-                  <button type="button" ng-click="showCvs.showCVS()" class="btn btn-primary w-25 mb-2">Parse to CVS</button>
-            <div class='output border rounded bg-white'>
-              <ul class="ml-0" >
-                <li ng-repeat="x in [].constructor(showCvs.max_length) track by $index" 
-                  class="d-inline-flex">
-                  {{"Word" + ($index+1)+", "}}</li>
-                <div ng-repeat="sentence in showCvs.sentences track by $index" class="ml-3">
-                  {{'Sentence'+ ($index+1) + ', '}}
-                    <div ng-repeat="item in sentence track by $index  " 
-                      class="d-inline-flex ml-3">
-                  {{item + ', '}}</div><br>
-                </div>
-              </ul><br>
-            </div>  
         </article>
-      	</div> 
+      </div>
+      <div class="row d-flex justify-content-center  ">
+        <article ng-controller="ShowCsvCtrl as showCvs" 
+          class="col-10">
+          <button type="button" ng-click="showCvs.showCVS()" class="btn btn-primary w-25 mb-2">Parse to CVS</button>
+          <div class='output border rounded bg-white'>
+            <ul class="ml-0" >
+              <li ng-repeat="x in [].constructor(showCvs.max_length) track by $index" 
+                class="d-inline-flex">
+                {{"Word" + ($index+1)+", "}}
+              </li>
+              <div ng-repeat="sentence in showCvs.sentences track by $index" class="ml-3">
+                {{'Sentence'+ ($index+1) + ', '}}
+                <div ng-repeat="item in sentence track by $index  " 
+                  class="d-inline-flex ml-3">
+                  {{item + ', '}}
+                </div>
+                <br>
+              </div>
+            </ul>
+            <br>
+          </div>
+        </article>
+      </div>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.js"></script>
     <script src="app.js"></script>

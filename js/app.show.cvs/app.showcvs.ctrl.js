@@ -8,14 +8,13 @@ ShowCsvCtrl.$inject = ['parseToSentences'];
 
 function ShowCsvCtrl(parseToSentences) {
   
-  var vm = this;
+  let vm = this;
   vm.text = parseToSentences.getInputText();
   vm.max_length = 0;
   vm.sentences;
 
   vm.getMaxSentenceSize = getMaxSentenceSize;
   vm.showCVS = showCVS;
-
 
   function showCVS() {
     vm.text = parseToSentences.getInputText();
@@ -28,14 +27,8 @@ function ShowCsvCtrl(parseToSentences) {
     }
   }
 
-  function getMaxSentenceSize(sentence = vm.sentences) {
-    var max = 0;
-    for (let i = 0; i < sentence.length; i++) {
-      if (max < sentence[i].length) {
-        max = sentence[i].length;
-      }
-    }
-    return max;
+  function getMaxSentenceSize(sentences = vm.sentences) {
+    return  sentences.reduce((max, {length}) => max < length ? length : max, 0);
   }
 
 }

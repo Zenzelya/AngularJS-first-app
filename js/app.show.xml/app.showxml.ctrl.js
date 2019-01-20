@@ -9,13 +9,11 @@ angular
 
 function ShowXmlCtrl(parseToSentences) {
 		var vm = this;
-		
 		vm.text = parseToSentences.getInputText();
 		vm.xmlHeader;
 		vm.xmltext;
 		vm.xmltextend; 
 		vm.sentences;
-
 		vm.showXML = showXML;
 
 		function showXML () {
