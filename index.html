@@ -27,7 +27,7 @@
           <button type="button" ng-click="showXml.showXML()" class="btn btn-primary mb-2 w-25">Parse to XML</button>
           <div class='output border rounded bg-white p-1'>
             <span>  {{showXml.xmlHeader}}<br>
-            {{showXml.xmltext}}<br></span>
+                    {{showXml.xmltext}}<br></span> 
             <ul ng-repeat="sentence in showXml.sentences track by $index" 
               class="mb-0">
               {{'<'+'sentence'+'>'}}
@@ -39,16 +39,16 @@
         </article>
       </div>
       <div class="row d-flex justify-content-center  ">
-        <article ng-controller="ShowCsvCtrl as showCvs" 
+        <article ng-controller="ShowCsvCtrl as showCVS" 
           class="col-10">
-          <button type="button" ng-click="showCvs.showCVS()" class="btn btn-primary w-25 mb-2">Parse to CVS</button>
+          <button type="button" ng-click="showCVS.showCVS()" class="btn btn-primary w-25 mb-2">Parse to CVS</button>
           <div class='output border rounded bg-white'>
             <ul class="ml-0" >
-              <li ng-repeat="x in [].constructor(showCvs.max_length) track by $index" 
+              <li ng-repeat="x in [].constructor(showCVS.max_length) track by $index" 
                 class="d-inline-flex">
                 {{"Word" + ($index+1)+", "}}
               </li>
-              <div ng-repeat="sentence in showCvs.sentences track by $index" class="ml-3">
+              <div ng-repeat="sentence in showCVS.sentences track by $index" class="ml-3">
                 {{'Sentence'+ ($index+1) + ', '}}
                 <div ng-repeat="item in sentence track by $index  " 
                   class="d-inline-flex ml-3">
@@ -67,6 +67,6 @@
     <script src="js/parse.to.sentences/parse.to.sentences.factory.js"></script>
     <script src="js/input.ctrl/app.input.js"></script>
     <script src="js/app.show.xml/app.showxml.ctrl.js"></script>
-    <script src="js/app.show.cvs/app.showcvs.ctrl.js"></script>
+    <script src="js/app.show.CVS/app.showCVS.ctrl.js"></script>
   </body>
 </html>
