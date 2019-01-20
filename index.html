@@ -11,25 +11,26 @@
       <h3 class="text-center text-primary">
       Parse your text to XML and CVS format</h3>
     </header>
-    <main class="conteiner ">
-      <div class="row mb-2">
-        <article ng-controller="InputCtrl as input"  class="col-12 d-flex justify-content-center">
+    <main class="conteiner">
+      
+      <div class="row mb-2 d-flex flex-row justify-content-center">
+        <article ng-controller="InputCtrl as input"  class="col-10">
           <textarea name="text"  
             ng-model="input.text" 
             ng-change="input.onChange()" 
-            class="output w-75 ">
+            class="output w-100 ">
           </textarea>
         </article>
       </div>
-      <div class="row d-flex  justify-content-center  mb-2">
-        <article ng-controller="ShowXmlCtrl as showXml"
-          class="col-10 ">
-          <button type="button" ng-click="showXml.showXML()" class="btn btn-primary mb-2 w-25">Parse to XML</button>
+     
+      <div class="row flex-row justify-content-center">
+        <article ng-controller="ShowXmlCtrl as showXml" class="col-5">
+          <button type="button" ng-click="showXml.showXML()" class="btn btn-primary mb-2 w-100">Parse to XML</button>
           <div class='output border rounded bg-white p-1'>
             <span>  {{showXml.xmlHeader}}<br>
                     {{showXml.xmltext}}<br></span> 
             <ul ng-repeat="sentence in showXml.sentences track by $index" 
-              class="mb-0">
+              class="mb-0 ml-0">
               {{'<'+'sentence'+'>'}}
               <li ng-repeat="item in sentence track by $index">{{'<'+'word'+'>' + item + '<\/'+'word'+'>'}}</li>
               {{'<\/'+'sentence'+'>'}}
@@ -37,11 +38,9 @@
             <span>{{showXml.xmltextend}}</span>
           </div>
         </article>
-      </div>
-      <div class="row d-flex justify-content-center  ">
-        <article ng-controller="ShowCsvCtrl as showCVS" 
-          class="col-10">
-          <button type="button" ng-click="showCVS.showCVS()" class="btn btn-primary w-25 mb-2">Parse to CVS</button>
+        
+        <article ng-controller="ShowCsvCtrl as showCVS" class="col-5">
+          <button type="button" ng-click="showCVS.showCVS()" class="btn btn-primary w-100 mb-2">Parse to CVS</button>
           <div class='output border rounded bg-white'>
             <ul class="ml-0" >
               <li ng-repeat="x in [].constructor(showCVS.max_length) track by $index" 

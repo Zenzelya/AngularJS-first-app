@@ -2,14 +2,16 @@
 
 li {
   list-style-type: none;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 ul {
 	margin-left: 0px;
+	padding: 5px;
 }
 
 .output {
 	height: 200px;
-  overflow-y: scroll;
+  	overflow-y: scroll;
 }
+
